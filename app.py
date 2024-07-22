@@ -29,12 +29,17 @@ while running:
     ball_x += ball_dx
     ball_y += ball_dy
 
+    if ball_x <= 0 or ball_x >= screen_width - ball_width:
+        ball_dx = -ball_dx
+    if ball_y <= 0 or ball_y >= screen_height - ball_height:
+        ball_dy = -ball_dy
+
     screen.fill(beige_marka)
 
     pygame.draw.ellipse(screen, ford_dark_charcoal, (ball_x, ball_y, ball_width, ball_height))
 
     pygame.display.flip()
 
-    clock.tick(60)
+    clock.tick(60)S
 
 pygame.quit()
